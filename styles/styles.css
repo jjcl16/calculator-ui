@@ -1,0 +1,129 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+        -khtml-user-select: none; /* Konqueror HTML */
+          -moz-user-select: none; /* Old versions of Firefox */
+            -ms-user-select: none; /* Internet Explorer/Edge */
+                user-select: none; /* Non-prefixed version, currently
+                                        supported by Chrome, Edge, Opera and Firefox */
+      
+}
+
+.body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    border: 2px solid black;
+    border-radius: 15px;
+    padding: 20px;
+    background-color: beige;
+}
+
+.screen{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 225px;
+    height: 105px;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+.topScreen{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    height: 40px;
+    width: 225px;
+    border: 1px solid black;
+    border-radius: 10px;
+    font-size: 20px;
+    background-color: green;
+}
+
+.bottomScreen{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    height: 65px;
+    width: 225px;
+    border: 1px solid black;
+    border-radius: 10px;
+    font-size: 50px;
+    background-color: green;
+    font-family: 'Segment7Standard';
+}
+
+.topButtons{
+    display: flex;    
+}
+.topButton{
+    margin: 5px;
+    height: 50px;
+    width: 110px;
+    border-radius: 10px;
+}
+
+.twoRows{
+    display: flex;
+}
+
+.smallButtons .number,
+.smallButtons .operations, 
+.number{
+    height: 50px;
+    width: 50px;
+    margin: 5px;
+    border-radius: 10px;
+}
+
+.bigButton{
+    margin: 5px;
+    width: 50px;
+    border-radius: 10px;
+}
+
+.zero{
+    height: 50px;
+    width: 175px;
+    margin: 5px;
+    background-color: lightgray;
+    border-radius: 10px;
+}
+
+.operations{
+    display: inline-flex;
+    align-items: center;
+    background-color: grey;
+    font-size: 50px;
+    font-weight: bolder;
+    align-items: center;
+    justify-content: center;
+    padding: 0px;
+}
+
+.number{
+    display: inline-flex;
+    align-items: center;
+    background-color: lightgray;
+    font-weight: bold;
+    font-size: 40px;
+    align-items: center;
+    justify-content: center;
+    padding: 0px;
+}
+
+.positioner{
+    
+    align-items: center;
+    justify-content: center;
+
+}
