@@ -30,7 +30,7 @@ deleteButton.addEventListener("click", deleteNumber);
 bottomScreen.textContent = 0;
 
 function keyPressed(e){
-    console.log(e.key);
+    //console.log(e.key);
 
     if (!isNaN(e.key) || e.key == "."){
         enterNumber(e.key)
@@ -74,37 +74,27 @@ function keyPressed(e){
 
 function isClickingNumber(e){
 
-    const clicked = e.target.textContent;
-
-    
-    enterNumber(clicked);
-/*
-    if(objOperation.result != "0") clear();
-
-    if( clicked == "." && bottomScreen.textContent == "0"){
-        bottomScreen.textContent = bottomScreen.textContent.concat(clicked);
-    } else if (bottomScreen.textContent == "0" && clicked != "."){
-        bottomScreen.textContent = clicked;
-    } else if (!bottomScreen.textContent.includes(".") ){
-        bottomScreen.textContent = bottomScreen.textContent.concat(clicked);
-    } else if ( bottomScreen.textContent.includes(".") && clicked!= "."){
-        bottomScreen.textContent = bottomScreen.textContent.concat(clicked);
-    }
-*/
+    const clicked = e.target.textContent;    
+    enterNumber(clicked) ;
 }
 
 function enterNumber(number){
     if(objOperation.result != "0") clear();
 
-    if( number == "." && bottomScreen.textContent == "0"){
-        bottomScreen.textContent = bottomScreen.textContent.concat(number);
-    } else if (bottomScreen.textContent == "0" && number != "."){
-        bottomScreen.textContent = number;
-    } else if (!bottomScreen.textContent.includes(".") ){
-        bottomScreen.textContent = bottomScreen.textContent.concat(number);
-    } else if ( bottomScreen.textContent.includes(".") && number!= "."){
-        bottomScreen.textContent = bottomScreen.textContent.concat(number);
+    if (bottomScreen.textContent.length < 8 ){
+        if( number == "." && bottomScreen.textContent == "0"){
+            bottomScreen.textContent = bottomScreen.textContent.concat(number);
+        } else if (bottomScreen.textContent == "0" && number != "."){
+            bottomScreen.textContent = number;
+        } else if (!bottomScreen.textContent.includes(".") ){
+            bottomScreen.textContent = bottomScreen.textContent.concat(number);
+        } else if ( bottomScreen.textContent.includes(".") && number!= "."){
+            bottomScreen.textContent = bottomScreen.textContent.concat(number);
+        }
     }
+
+
+    
 }
 
 function isClickingOperations(e){
@@ -193,12 +183,24 @@ function mathematic(){
 
     }
 
-    bottomScreen.textContent = (!isNaN(objOperation.result)) ? objOperation.result : "Math Error";
+    objOperation.result = ( !isNaN(objOperation.result) && (objOperation.result < 99999999) ) ? checkLength(objOperation.result) : "Error";
     // inicializar 
+    
     objOperation.number1 = null;
     objOperation.number2 = null;
     objOperation.operation="";
     return objOperation;
+}
+
+function checkLength(number){
+
+    let  numbers = number.toString().split(".");
+
+
+
+    return  (numbers[1] && numbers[0].length<7) ? number.toFixed(2) :
+            (numbers[1] && numbers[0].length<8) ?  number.toFixed(1) :
+            (numbers[0].length<9 && typeof (numbers[1]) === "undefined") ? number : "Error";
 }
 
 function EventClickOperation(operation) {

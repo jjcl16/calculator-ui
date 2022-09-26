@@ -22,8 +22,8 @@ body{
     width: 250px;
     border: 2px solid black;
     border-radius: 15px;
-    padding: 20px;
-    background-color: beige;
+    padding: 15px 10px 10px 10px;
+    background-color: #202030;
 }
 
 .screen{
@@ -31,7 +31,7 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 225px;
+    width: 235px;
     height: 105px;
     border: 2px solid black;
     border-radius: 10px;
@@ -42,7 +42,7 @@ body{
     justify-content: flex-end;
     align-items: flex-end;
     height: 40px;
-    width: 225px;
+    width: 235px;
     border: 1px solid black;
     border-radius: 10px;
     font-size: 20px;
@@ -54,7 +54,7 @@ body{
     justify-content: flex-end;
     align-items: flex-end;
     height: 65px;
-    width: 225px;
+    width: 235px;
     border: 1px solid black;
     border-radius: 10px;
     font-size: 50px;
@@ -70,6 +70,10 @@ body{
     height: 50px;
     width: 110px;
     border-radius: 10px;
+    background-color:grey;
+    font-size: 20px;
+    font-weight: bolder;
+    transition: 200ms;
 }
 
 .twoRows{
@@ -102,12 +106,13 @@ body{
 .operations{
     display: inline-flex;
     align-items: center;
-    background-color: grey;
+    background-color:grey;
     font-size: 50px;
     font-weight: bolder;
     align-items: center;
     justify-content: center;
     padding: 0px;
+    transition: 200ms;
 }
 
 .number{
@@ -119,6 +124,7 @@ body{
     align-items: center;
     justify-content: center;
     padding: 0px;
+    transition: 200ms;
 }
 
 .positioner{
@@ -126,4 +132,20 @@ body{
     align-items: center;
     justify-content: center;
 
+}
+
+.mouseOnNumber{
+    background-color: grey;
+}
+
+.mouseOnOperation{
+    background-color: lightgray;
+}
+
+.clicked{
+    background-color: darkred;
+}
+
+.green{
+    background-color: green;
 }
